@@ -2,6 +2,8 @@ package me.projects.bookshop.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import me.projects.bookshop.model.Book;
 
 public interface BookService {
@@ -13,4 +15,8 @@ public interface BookService {
 	Book getBookById(long id);
 	
 	void deleteBookById(long id);
+	
+	Page <Book> findPaginated(int pageNumber, int pageSize, String  sortField, String sortDirection);
+	
+	
 }
